@@ -1,0 +1,27 @@
+#!/bin/sh
+
+foo(){
+	neocover &
+	rngkey=$(shuf -i 1-1000000 -n 1)
+	tddate=$(ddate +"It's %{%A, the %e of %B%} (YOLD %Y)%N ... Celebrate %H!")
+#	[ -d $XDG_CACHE_HOME/qutebrowser ] && rm -rf $XDG_CACHE_HOME/qutebrowser
+
+	[ -f ~/.config/polybar/netadpt ] || touch ~/.config/polybar/netadpt
+	echo $(ip route | grep '^default' | awk '{print $5}' | head -n1) > ~/.config/polybar/netadpt
+	[ -f ~/.config/polybar/mood ] || touch ~/.config/polybar/mood
+	newthm=$(wpg -c)
+	echo $newthm > ~/.config/polybar/mood
+
+	pgrep qutebrowser && i3-msg -q 'exec --no-startup-id qutebrowser :config-source :reload'
+	sed -i "15s/.*/rng = $rngkey/g" ~/.config/wpg/wpg.conf
+	sed -i "16s/.*/loldate = $tddate/g" ~/.config/wpg/wpg.conf
+	wait
+	return
+}
+foo
+
+[ -f ~/.fehbg ] && rm ~/.fehbg
+
+h=$(xdotool search --name "mediumctl")
+a=$(xdotool getactivewindow)
+[ "$h" = "$a" ] && pkill zsh --signal=USR2

@@ -1,0 +1,26 @@
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
+Xft.rgba: rgb
+Xft.dpi: 102
+
+URxvt*termName: rxvt-256color
+URxvt*font: xft:Iosevka Term :size=13
+URxvt*letterSpace: 0
+URxvt*depth: 32
+URxvt*scrollBar: false
+URxvt*cursorBlink: true
+URxvt*cursorUnderline: true
+URxvt*saveLines: 1000
+URxvt.internalBorder: 18
+URxvt*internalBorder: 18
+URxvt*urgentOnBell: false
+
+URxvt*perl-ext: default,clipboard,url-select,keyboard-select
+URxvt*keysym.M-u: perl:url-select:select_next
+URxvt*keysym.M-Escape: perl:keyboard-select:activate
+URxvt*keysym.M-s: perl:keyboard-select:search
+URxvt*url-select.launcher: /usr/bin/xdg-open
+URxvt*url-select.underline: true

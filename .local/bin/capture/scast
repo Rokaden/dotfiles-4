@@ -1,0 +1,28 @@
+#!/bin/bash
+
+capff(){
+dunstify -r 4088004 "(墳) recording 雷" "hi reddit שּ樓" -i "~/.config/dunst/scast.svg"
+ffmpeg -y -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f pulse -i 0 ~/working/scast_$(date '+%Y%m%d-%H%M%S').mp4 &
+sleep 3
+dunstify -C 4088004
+wait
+return
+}
+
+capsa(){
+dunstify -r 4088004 "(婢) recording 雷" "hi reddit שּ樓" -i "~/.config/dunst/scast.svg"
+ffmpeg -y -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 ~/working/scast_$(date '+%Y%m%d-%H%M%S').mp4 &
+sleep 3
+dunstify -C 4088004
+wait
+return
+}
+
+cap=$(echo -e "full fat\nsans audio" | rofi -dmenu -format i)
+if [ "$cap" = 0 ]; then
+	capff
+elif [ "$cap" = 1 ]; then
+	capsa
+fi
+
+return

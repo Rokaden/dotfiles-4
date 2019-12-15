@@ -1,0 +1,23 @@
+#!/bin/sh
+
+[ -f /tmp/vidpath ] && rm /tmp/vidpath
+[ -f /tmp/vidplay ] && rm /tmp/vidplay
+[ -f /tmp/vidtitle ] && rm /tmp/vidtitle
+
+touch /tmp/vidpath
+touch /tmp/vidplay
+touch /tmp/vidtitle
+
+c=$(ls -1 ~/video/ | rofi -dmenu -i -format s)
+[ ! "$c" ] && exit
+
+find ~/video/"$c" -type f > /tmp/vidpath
+find /100G/video/"$c" -type f >> /tmp/vidpath
+find ~/video/"$c" -type f -printf "%f\n" > /tmp/vidtitle
+find /100G/video/"$c" -type f -printf "%f\n" >> /tmp/vidtitle
+v=$(cat /tmp/vidtitle | rofi -dmenu -i -format d)
+[ ! "$v" ] && exit
+
+echo $(sed "${v}q;d" /tmp/vidpath) > /tmp/vidplay
+i3-msg -q 'exec --no-startup-id mpv "$(head -n 1 /tmp/vidplay)"'
+i3-msg -q 'workspace 10'

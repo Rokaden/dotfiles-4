@@ -1,0 +1,8 @@
+#!/bin/sh
+
+i3-msg -q 'workspace 1'
+h=$(xdotool search --name "mediumctl")
+if [ "$h" ]; then
+	xdotool windowactivate $h
+	pkill zsh --signal=USR2
+fi

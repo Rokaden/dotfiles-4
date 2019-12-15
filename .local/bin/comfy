@@ -1,0 +1,18 @@
+#!/bin/sh
+
+dunstify -r 4088099 -t 3000 "getting comfy" -i "~/.config/dunst/comfy.svg"
+
+i3-msg -q 'workspace 1; append_layout /home/dave/.config/i3/comfy.json'
+sleep 0.1
+i3-msg -q 'exec --no-startup-id urxvtc -name mediumctl'
+i3-msg -q 'exec --no-startup-id urxvtc -name vit -e vit'
+i3-msg -q 'exec --no-startup-id urxvtc -name playlist -e ncmpcpp'
+i3-msg -q 'exec --no-startup-id urxvtc -name visualizer -e ncmpcpp -c ~/.config/ncmpcpp/config.alt'
+i3-msg -q 'exec --no-startup-id qutebrowser'
+i3-msg -q 'exec --no-startup-id urxvtc -name filemgr -e ranger'
+sleep 0.1
+h=$(xdotool search --name "mediumctl")
+xdotool windowactivate $h
+pgrep compton && killall compton
+sleep 0.1
+i3-msg -q 'exec --no-startup-id compton --config ~/.config/compton/compton.conf --unredir-if-possible &'

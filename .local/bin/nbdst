@@ -1,0 +1,4 @@
+#!/bin/sh
+
+body=$1
+dunstify -r 4088006 -t 3000 "$body" -i "~/.config/dunst/rss_new.png"

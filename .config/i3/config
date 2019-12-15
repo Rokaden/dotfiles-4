@@ -1,0 +1,186 @@
+# i3 config file (modded by PureArtistry)
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+#//easy access toggles
+#focus_follows_mouse no
+#exec --no-startup-id ffmpeg -y -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 ~/working/scast_$(date '+%Y%m%d-%H%M%S').mp4
+bindsym Mod4+j exec --no-startup-id ~/working/testscript
+
+#//variables
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+#//startup
+exec --no-startup-id compton --config ~/.config/compton/compton.conf -b --unredir-if-possible
+#exec --no-startup-id comfy
+exec --no-startup-id wpg -m
+exec --no-startup-id mpd
+exec --no-startup-id aclipexe
+exec --no-startup-id recollindex -m
+exec --no-startup-id python3 -m http.server 4088 --bind 127.0.0.1 --directory ~/.local/share/localweb/startpage
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+#//theme
+set $coloract "{active}"
+set $colorin "{inactive}"
+
+set_from_resource $color15 i3wm.color15 "{color15}"
+set_from_resource $split i3wm.color13 "{color13}"
+set_from_resource $coloru i3wm.color5 "{color5}"
+set_from_resource $color0 i3wm.color0 "{color0}"
+set_from_resource $color8 i3wm.color8 "{color8}"
+
+# class                 border    backgr    text    indicator child_border
+client.focused          $coloract $coloract $color15 $split  $coloract
+client.focused_inactive $coloract $coloract $color15 $split  $colorin
+client.unfocused        $colorin  $colorin  $color15 $split  $colorin
+client.urgent           $coloru   $coloru   $color15 $coloru $coloru
+client.placeholder      $color0   $color8   $color15 $color0 $color8
+client.background       $color0
+
+font pango:Iosevka Nerd Font 13
+
+default_border pixel 2
+default_floating_border pixel 2
+gaps inner 12
+gaps outer 0
+
+#//window rules
+for_window [title="HideMe"] move scratchpad
+for_window [title="sxiv"] floating enable
+for_window [class="mpv"] floating enable, move container to workspace $ws10
+for_window [class="mpv"] [floating] resize set 1024 576, move position center
+
+assign [class="qutebrowser"] $ws2
+assign [class="URxvt" instance="filemgr"] $ws3
+assign [class="Org.gnome.gedit"] $ws4
+assign [class="Gimp-2.10"] $ws4
+
+#//launch binds
+bindsym Mod4+Return exec urxvtc
+bindsym Mod4+Shift+Return exec urxvtc -e ranger
+bindsym Mod4+Mod1+Return exec qutebrowser
+bindsym Mod4+Shift+d exec --no-startup-id dmenu_run -b -fn 'Iosevka Nerd Font-12' -nb "{inactive}" -nf "{color15}" -sb "{color1}" -sf "{color15}"
+bindsym Mod4+Tab exec --no-startup-id rofi -show combi -combi-modi "window#drun#run" -modi combi
+bindsym Mod4+f exec --no-startup-id zzzfoo -e="-mime:message/rfc822" -o openffs
+bindsym Mod4+backslash exec --no-startup-id vidmenu
+bindsym Mod4+d exec --no-startup-id rinse
+bindsym Mod4+m exec urxvtc -e ncmpcpp
+bindsym Mod4+Mod1+m exec urxvtc -e ncmpcpp -c ~/.config/ncmpcpp/config.alt
+bindsym Mod4+i exec urxvtc -e vit
+bindsym Mod4+o exec urxvtc -e tremc
+bindsym Mod4+Shift+o exec qutebrowser localhost:9091
+bindsym Mod4+p exec --no-startup-id urxvtc -e newsboat
+bindsym Mod4+Shift+p exec qutebrowser https://duckduckgo.com/
+bindsym Mod4+slash exec urxvtc -e gotop
+bindsym Mod4+g exec --no-startup-id gitme
+
+#//window binds
+bindsym Mod4+Shift+q kill
+
+bindsym Mod4+Left focus left
+bindsym Mod4+Down focus down
+bindsym Mod4+Up focus up
+bindsym Mod4+Right focus right
+
+bindsym Mod4+Shift+Left move left
+bindsym Mod4+Shift+Down move down
+bindsym Mod4+Shift+Up move up
+bindsym Mod4+Shift+Right move right
+
+bindsym Mod4+h split h
+bindsym Mod4+v split v
+
+bindsym Mod4+Shift+f fullscreen toggle
+bindsym Mod4+Mod1+f move position center
+
+bindsym Mod4+s layout stacking
+bindsym Mod4+w layout tabbed
+bindsym Mod4+e layout toggle split
+
+bindsym Mod4+space focus mode_toggle
+bindsym Mod4+Shift+space floating toggle
+bindsym Mod4+Mod1+space sticky toggle
+floating_modifier Mod4
+
+bindsym Mod4+a focus parent
+bindsym Mod4+Shift+a focus child
+
+bindsym Mod4+1 exec --no-startup-id artrfsh
+bindsym Mod4+2 workspace $ws2
+bindsym Mod4+3 workspace $ws3
+bindsym Mod4+4 workspace $ws4
+bindsym Mod4+5 workspace $ws5
+bindsym Mod4+6 workspace $ws6
+bindsym Mod4+7 workspace $ws7
+bindsym Mod4+8 workspace $ws8
+bindsym Mod4+9 workspace $ws9
+bindsym Mod4+0 workspace $ws10
+
+bindsym Mod4+Shift+1 move container to workspace $ws1
+bindsym Mod4+Shift+2 move container to workspace $ws2
+bindsym Mod4+Shift+3 move container to workspace $ws3
+bindsym Mod4+Shift+4 move container to workspace $ws4
+bindsym Mod4+Shift+5 move container to workspace $ws5
+bindsym Mod4+Shift+6 move container to workspace $ws6
+bindsym Mod4+Shift+7 move container to workspace $ws7
+bindsym Mod4+Shift+8 move container to workspace $ws8
+bindsym Mod4+Shift+9 move container to workspace $ws9
+bindsym Mod4+Shift+0 move container to workspace $ws10
+
+mode "resize" {{
+        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Down resize grow height 1 px or 1 ppt
+        bindsym Up resize shrink height 1 px or 1 ppt
+        bindsym Right resize grow width 1 px or 1 ppt
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym Mod4+r mode "default"
+}}
+bindsym Mod4+r mode "resize"
+bindsym Mod4+Mod1+Left resize shrink width 10 px or 10 ppt
+bindsym Mod4+Mod1+Down resize grow height 10 px or 10 ppt
+bindsym Mod4+Mod1+Up resize shrink height 10 px or 10 ppt
+bindsym Mod4+Mod1+Right resize grow width 10 px or 10 ppt
+
+#//function binds
+bindsym Mod4+F2 exec --no-startup-id wifitgl
+bindsym Mod4+Shift+t exec --no-startup-id cmptgl
+bindsym Mod4+Shift+backslash exec --no-startup-id acetgl
+bindsym Mod4+Shift+slash exec --no-startup-id comfy
+
+bindsym Print exec --no-startup-id sshot
+bindsym Mod4+Print exec --no-startup-id scast
+bindsym Mod4+Shift+Print exec --no-startup-id kill-scast
+
+bindsym Mod4+n exec --no-startup-id wpg -m
+bindsym Mod4+shift+n exec --no-startup-id thmsel
+bindsym Mod4+Mod1+n exec --no-startup-id wpg -z $(wpg -c) && wpg -s $(wpg -c)
+
+bindsym Mod4+F6 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
+bindsym Mod4+F7 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym Mod4+F8 exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+
+bindsym Mod4+Shift+m exec --no-startup-id sngnfo
+bindsym Mod4+F9 exec --no-startup-id mpc toggle
+bindsym Mod4+F10 exec --no-startup-id mpc stop
+bindsym Mod4+F11 exec --no-startup-id mpc prev
+bindsym Mod4+Shift+F11 exec --no-startup-id mpc seek 0
+bindsym Mod4+F12 exec --no-startup-id mpc next
+bindsym Mod4+Shift+F12 exec --no-startup-id btrand
+
+bindsym Mod4+Shift+w exec --no-startup-id vgaconf
+bindsym Mod4+Shift+c reload
+bindsym Mod4+Shift+r restart
+bindsym Mod4+Mod1+r exec --no-startup-id thmupd
+bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"

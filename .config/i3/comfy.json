@@ -1,0 +1,103 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.7,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 588,
+               "width": 756,
+               "x": 0,
+               "y": 0
+            },
+            "name": "urxvt",
+            "percent": 0.76,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+                "instance": "^mediumctl$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 588,
+               "width": 756,
+               "x": 0,
+               "y": 0
+            },
+            "name": "vit",
+            "percent": 0.24,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+                "instance": "^vit$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.3,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 588,
+               "width": 756,
+               "x": 0,
+               "y": 0
+            },
+            "name": "ncmpcpp 0.8.2",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+                "instance": "^playlist$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 2,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 588,
+               "width": 756,
+               "x": 0,
+               "y": 0
+            },
+            "name": "ncmpcpp 0.8.2",
+            "percent": 0.5,
+            "swallows": [
+               {
+                "class": "^URxvt$",
+                "instance": "^visualizer$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

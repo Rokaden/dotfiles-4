@@ -1,0 +1,5 @@
+#!/bin/sh
+
+t=$(mpc playlist | wc -l)
+n=$(shuf -i 1-$t -n 1)
+mpc play $n

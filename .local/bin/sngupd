@@ -1,0 +1,8 @@
+#!/bin/sh
+
+neocover &
+wait
+
+h=$(xdotool search --name "mediumctl")
+a=$(xdotool getactivewindow)
+[ "$h" = "$a" ] && pkill zsh --signal=USR2
