@@ -4,7 +4,6 @@
 
 #//easy access toggles
 #focus_follows_mouse no
-#exec --no-startup-id ffmpeg -y -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 ~/working/scast_$(date '+%Y%m%d-%H%M%S').mp4
 bindsym Mod4+j exec --no-startup-id ~/working/testscript
 
 #//variables
