@@ -1,28 +1,82 @@
 #!/bin/bash
+# adapted from https://github.com/Enverex/arcade/blob/master/bin/liveStream
 
-capff(){
-dunstify -r 4088004 "(墳) recording 雷" "hi reddit שּ樓" -i "~/.config/dunst/scast.svg"
-ffmpeg -y -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 -f pulse -i 0 ~/working/scast_$(date '+%Y%m%d-%H%M%S').mp4 &
-sleep 3
-dunstify -C 4088004
-wait
-return
+## Options
+frameRate=60	# FPS
+audioQuality=8	# Opus Qual - Bad 0 <> 10 Good
+videoQuality=18 # H264 QVal - Lower is better
+recordLocation=$HOME/working
+
+cgpu=$(optimus-manager --print-mode)
+currentRes=$(xdpyinfo | grep dimensions | awk '{print $2}')
+encoderDevice=$(ls -1 /dev/dri/renderD* | sort -r | head -n1)
+
+iff(){
+	dunstify -r 4088004 -t 3000 "(墳) recording 雷" "hi reddit שּ樓" -i "~/.config/dunst/scast.svg"
+	ffmpeg -loglevel 16 -threads 4 -probesize 10M -framerate ${frameRate} -vsync 1 \
+		-vaapi_device ${encoderDevice} -hwaccel vaapi -hwaccel_output_format vaapi \
+		-thread_queue_size 512 -f x11grab -s ${currentRes} -r ${frameRate} -i :0.0 \
+		-thread_queue_size 512 -f pulse -ac 2 -channel_layout stereo -i 0 -c:a libopus -vbr on -compression_level ${audioQuality} \
+		-vf hwupload -c:v h264_vaapi -qp ${videoQuality} "${recordLocation}/$(date +%y%m%d%H%M%S).mkv"
+	wait
+	return
 }
 
-capsa(){
-dunstify -r 4088004 "(婢) recording 雷" "hi reddit שּ樓" -i "~/.config/dunst/scast.svg"
-ffmpeg -y -video_size 1920x1080 -framerate 30 -f x11grab -i :0.0 ~/working/scast_$(date '+%Y%m%d-%H%M%S').mp4 &
-sleep 3
-dunstify -C 4088004
-wait
-return
+nff(){
+	dunstify -r 4088004 -t 3000 "(墳) recording 雷" "hi reddit שּ樓" -i "~/.config/dunst/scast.svg"
+	ffmpeg -loglevel 16 -threads 4 -probesize 10M -framerate ${frameRate} -vsync 1 \
+		-thread_queue_size 512 -f x11grab -s ${currentRes} -r ${frameRate} -i :0.0 \
+		-thread_queue_size 512 -f pulse -ac 2 -channel_layout stereo -i 0 -c:a libopus -vbr on -compression_level ${audioQuality} \
+		-c:v h264_nvenc -qp ${videoQuality} "${recordLocation}/$(date +%y%m%d%H%M%S).mkv"
+	wait
+	return
 }
 
-cap=$(echo -e "full fat\nsans audio" | rofi -dmenu -format i)
-if [ "$cap" = 0 ]; then
-	capff
-elif [ "$cap" = 1 ]; then
-	capsa
-fi
+isa(){
+	dunstify -r 4088004 -t 3000 "(婢) recording 雷" "hi reddit שּ樓" -i "~/.config/dunst/scast.svg"
+	ffmpeg -loglevel 16 -threads 4 -probesize 10M -framerate ${frameRate} -vsync 1 \
+		-vaapi_device ${encoderDevice} -hwaccel vaapi -hwaccel_output_format vaapi \
+		-thread_queue_size 512 -f x11grab -s ${currentRes} -r ${frameRate} -i :0.0 \
+		-vf hwupload -c:v h264_vaapi -qp ${videoQuality} "${recordLocation}/$(date +%y%m%d%H%M%S).mkv"
+	wait
+	return
+}
 
-return
+nsa(){
+	dunstify -r 4088004 -t 3000 "(婢) recording 雷" "hi reddit שּ樓" -i "~/.config/dunst/scast.svg"
+	ffmpeg -loglevel 16 -threads 4 -probesize 10M -framerate ${frameRate} -vsync 1 \
+		-thread_queue_size 512 -f x11grab -s ${currentRes} -r ${frameRate} -i :0.0 \
+		-c:v h264_nvenc -qp ${videoQuality} "${recordLocation}/$(date +%y%m%d%H%M%S).mkv"
+	wait
+	return
+}
+
+cintel(){
+	icap=$(echo -e "full fat\nsans audio" | rofi -dmenu -format i)
+	[ ! "$icap" ] && exit
+	if [ "$icap" = 0 ]; then
+		iff
+	elif [ "$icap" = 1 ]; then
+		isa
+	fi
+	return
+}
+
+cnvidia(){
+	ncap=$(echo -e "full fat\nsans audio" | rofi -dmenu -format i)
+	[ ! "$ncap" ] && exit
+	if [ "$ncap" = 0 ]; then
+		nff
+	elif [ "$ncap" = 1 ]; then
+		nsa
+	fi
+	return
+}
+
+case "$cgpu" in
+	*intel*) cintel ;;
+	*nvidia*) cnvidia ;;
+	*) return ;;
+esac
+
+exit
