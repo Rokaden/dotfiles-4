@@ -246,7 +246,7 @@ c.colors.hints.match.fg = '{color5}'
 
 ## Background color of the statusbar in command mode.
 ## Type: QssColor
-c.colors.statusbar.command.bg = '{active}'
+c.colors.statusbar.command.bg = '{color2}'
 
 ## Foreground color of the statusbar in command mode.
 ## Type: QssColor
@@ -262,7 +262,7 @@ c.colors.statusbar.command.fg = '{color7}'
 
 ## Background color of the statusbar in insert mode.
 ## Type: QssColor
-c.colors.statusbar.insert.bg = '{color1}'
+c.colors.statusbar.insert.bg = '{color0}'
 
 ## Foreground color of the statusbar in insert mode.
 ## Type: QssColor
@@ -270,7 +270,7 @@ c.colors.statusbar.insert.fg = '{color7}'
 
 ## Background color of the statusbar.
 ## Type: QssColor
-c.colors.statusbar.normal.bg = '{color2}'
+c.colors.statusbar.normal.bg = '{color1}'
 
 ## Foreground color of the statusbar.
 ## Type: QssColor
@@ -306,7 +306,7 @@ c.colors.statusbar.url.fg = '{color6}'
 
 ## Foreground color of the URL in the statusbar for hovered links.
 ## Type: QssColor
-c.colors.statusbar.url.hover.fg = 'white'
+c.colors.statusbar.url.hover.fg = '{color6}'
 
 ## Foreground color of the URL in the statusbar on successful load
 ## (http).
