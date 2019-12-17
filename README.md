@@ -18,3 +18,6 @@ A few of the config files are wpg templates that need to be linked before they w
 also to further reduce the size of this repo all of the wallpapers & colour schemes can be found @ https://drive.google.com/open?id=1JTo31c7Yy2YHZzNzo929TWGevlwOWFCP
 
 I'm running out of things to tweak on this so I'll start working on an install script soon, maybe even an AUR package.
+
+Here's a short demo of some of the features...
+<blockquote class="reddit-card" data-card-created="1576563498"><a href="https://www.reddit.com/r/unixporn/comments/ebrjii/i3gaps_please_reddit_no_softwaregore_this_time/">[i3-gaps] Please Reddit, no softwaregore this time...</a> from <a href="http://www.reddit.com/r/unixporn">r/unixporn</a></blockquote>
