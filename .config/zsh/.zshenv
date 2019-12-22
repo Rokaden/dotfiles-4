@@ -15,3 +15,4 @@ export GNUPGHOME=$XDG_DATA_HOME/gnupg
 export INPUTRC=$XDG_CONFIG_HOME/readline/inputrc
 export RECOLL_CONFDIR=$XDG_CONFIG_HOME/recoll
 export ASPELL_CONF="per-conf $XDG_CONFIG_HOME/aspell/aspell.conf; personal $XDG_CONFIG_HOME/aspell/en.pws; repl $XDG_CONFIG_HOME/aspell/en.prepl"
+export QT_QPA_PLATFORMTHEME="qt5ct"
