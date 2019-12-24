@@ -82,6 +82,7 @@ bindsym Mod4+p exec --no-startup-id urxvtc -e newsboat
 bindsym Mod4+Shift+p exec qutebrowser https://duckduckgo.com/
 bindsym Mod4+slash exec urxvtc -e gotop
 bindsym Mod4+g exec --no-startup-id gitme
+bindsym Mod4+Mod1+e exec --no-startup-id rofiemoji
 
 #//window binds
 bindsym Mod4+Shift+q kill
