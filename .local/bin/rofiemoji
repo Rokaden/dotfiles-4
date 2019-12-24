@@ -7,4 +7,4 @@ chosen=$(grep -v "#" ~/.local/share/emoji | rofi -dmenu -i)
 
 c=$(echo "$chosen" | sed "s/ .*//")
 echo "$c" | tr -d '\n' | xclip -selection clipboard
-dunstify -r 4088992 -t 3000 "'$c' copied to clipboard." &
+dunstify -r 4088992 -t 3000 "'$c' copied to clipboard." -i "/home/dave/.config/dunst/clipboard.svg" &
