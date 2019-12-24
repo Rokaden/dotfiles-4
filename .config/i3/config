@@ -182,4 +182,4 @@ bindsym Mod4+Shift+w exec --no-startup-id vgaconf
 bindsym Mod4+Shift+c reload
 bindsym Mod4+Shift+r restart
 bindsym Mod4+Mod1+r exec --no-startup-id thmupd
-bindsym Mod4+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym Mod4+Shift+e exec --no-startup-id rofiexit
