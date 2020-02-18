@@ -1,3 +1,7 @@
+UPDATE: Im going to move this setup to another branch, after seeing so many people using and making content for bspwm I decided to give it a try...
+Suffice to say, I'm loving it so far. Also switched URxvt for kitty, updated all my scripts/configs/etc to be more readable.
+The new setup should be ready soon(ish).
+
 Had to put Windows back on my system (my DJ controller refuses to work on Linux), so a few things have changed with my Arch setup.
 I've nuked the old repo to reduce file size, ditch useless stuff.
 
