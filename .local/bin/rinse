@@ -1,5 +1,0 @@
-#!/bin/sh
-
-sngsel=$(mpc playlist | rofi -dmenu -i -format d)
-[ ! "$sngsel" ]	&& exit
-mpc -q play $sngsel

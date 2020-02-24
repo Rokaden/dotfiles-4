@@ -1,4 +1,0 @@
-#!/bin/sh
-
-pgrep aclipexe && killall aclipexe || i3-msg -q 'exec --no-startup-id aclipexe'
-pgrep aclipexe && dunstify -r 4088011 -t 3000 "clipboard monitoring:" "enabled" -i "~/.config/dunst/clipboard.svg" || dunstify -r 4088011 -t 3000 "clipboard monitoring" "disabled" -i "~/.config/dunst/clipboard.svg"

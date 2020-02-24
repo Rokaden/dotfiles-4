@@ -1,7 +1,0 @@
-#!/bin/sh
-
-thmfp=$(sxiv -otb ~/.config/wpg/wallpapers)
-[ ! "$thmfp" ] && exit
-newthm=$(basename $thmfp)
-wpg -s $newthm
-thmupd
