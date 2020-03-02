@@ -30,3 +30,5 @@ pkill zsh --signal=USR1
 sleep 0.3
 wait
 bspc desktop $(head -n1 /tmp/breadcrumbs) -f -a
+home_desktop=$(bspc query -d focused -T | jq '.name')
+[ $home_desktop = '"1"' ] && feng_shui

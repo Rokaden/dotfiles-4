@@ -34,7 +34,7 @@ super + d
 
 #: rofi
 super + Tab
-    rofi -show combi -combi-modi "window,drun,run" -modi combi
+    my_rofi
 
 #: config menu
 super + BackSpace

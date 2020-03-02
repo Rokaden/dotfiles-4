@@ -3,18 +3,18 @@
     background-color: {color0}00;
     border-color: {color0}FF;
     text-color: {color15};
-    anchor: south east;
-    location: south east;
+    anchor: south west;
+    location: south west;
 }}
 #window {{
     font: "Iosevka Nerd Font 12";
-    width: 18%;
+    width: 346px;
     transparency: "real";
     background-color: {color0}00;
     border: 0;
     padding: 0% 0% 1em 0%;
-    x-offset: -4px;
-    y-offset: 16px;
+    x-offset: 4px;
+    y-offset: -39px;
 }}
 #mainbox {{
     padding: 0px;
@@ -117,3 +117,5 @@
     margin:     0px 0.3em 0em 0em ;
     text-color: {color15};
 }}
+
+/* vim:ft=css
