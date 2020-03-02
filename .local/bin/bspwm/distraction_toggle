@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# toggle distraction windows on home workspace
+
+dazzle_me(){
+	# start ncmpcpp visualizer
+	[ -f /tmp/pretty_colours_id ] && rm -f /tmp/pretty_colours_id
+	launch_kitty --class "pretty colours" --name "pretty colours" --title "pretty colours" ncmpcpp -c $XDG_CONFIG_HOME/ncmpcpp/config.viz
+	sleep 0.2
+	pretty_colours_id=$(xwininfo -root -children | grep -w "pretty colours" | awk '{print $1}')
+	touch /tmp/pretty_colours_id
+	echo "$pretty_colours_id" > /tmp/pretty_colours_id
+
+	# launch the rest
+	launch_kitty --name "fancy writing" --class "fancy writing" --title "fancy writing" fancy_writing
+	[ -f /tmp/the_art_show ] || touch /tmp/the_art_show
+	echo "yes" > /tmp/the_art_show
+	art_show
+	exit
+}
+
+plz_stop(){
+	STOP_KILLING_RANDOM_SHIT "pretty colours"
+	STOP_KILLING_RANDOM_SHIT "fancy writing"
+	rm -f /tmp/fancy_writing_id
+	pgrep sxiv && pkill sxiv
+	[ -f /tmp/the_art_show ] && rm -f /tmp/the_art_show
+	exit
+}
+
+[ $1 = "video" ] && plz_stop
+check=$(pgrep fancy_writing)
+[ ! $check ] && dazzle_me || plz_stop

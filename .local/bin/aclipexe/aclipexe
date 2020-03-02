@@ -1,0 +1,101 @@
+#!/bin/sh
+
+# (a)utomatic (clip)board (exe)cution
+
+[ -f /tmp/the_void ] || touch /tmp/the_void
+processed=""
+first_run=1
+
+main(){
+	while clipnotify; do
+		selection=$(xclip -selection clipboard -o)
+		[ ! "$selection" ] || [ "$selection" = "$processed" ] && main
+		case "$selection" in
+			UniqueString4ncmpcpp2TriggerUpdate) mpd_trigger ;;
+			*youtube.com/watch*) youtube ;;
+			*youtu.be/watch*) youtube ;;
+			# *magnet*tracker*) torrent ;;
+			*twitch.tv/*) twitch ;;
+			https://*.redd*/*) reddit ;;
+			*) ignore ;;
+		esac
+	done
+}
+
+mpd_trigger(){
+    processed=$(cat /tmp/ace_temp_buffer)
+    xclip -selection clipboard /tmp/ace_temp_buffer
+    rm -f /tmp/ace_temp_buffer
+    neocover
+    show_art=$(head -n1 /tmp/the_art_show)
+    case "$show_art" in
+	yes) update_art ;;
+	init) update_art init ;;
+	swap) update_art swap ;;
+	*) cleanup ;;
+    esac
+    cleanup
+}
+
+update_art(){
+    if [ $1 = init ]; then
+	echo "yes" > /tmp/the_art_show
+	return
+    elif [ $1 = swap ]; then
+	echo "yes" > /tmp/the_art_show
+	pgrep sxiv && kill -9 /tmp/art_show_id
+	art_show delay
+	return
+    fi
+    pgrep sxiv && kill -9 /tmp/art_show_id
+    sleep 0.1
+    art_show
+    [ $first_run = 0 ] && pgrep fancy_writing && pkill fancy_writing --signal=USR1
+    first_run=0
+    return
+}
+
+cleanup(){
+    [ -d $HOME/.w3m ] && rm -rf $HOME/.w3m
+    [ -d $HOME/.nv ] && rm -rf $HOME/.nv
+    [ -f $HOME/.fehbg ] && rm -f $HOME/.fehbg
+    main
+}
+
+youtube(){
+	processed=$selection
+	youtube-dl $(xclip -selection clipboard -o) &
+	dunstify -r 3001 -t 3000 "downloading" "$(xclip -selection clipboard -o)" -i $XDG_CONFIG_HOME/dunst/icons/ytdl_sml.png
+	xclip -selection clipboard /tmp/the_void
+	cleanup
+}
+
+torrent(){
+	processed=$selection
+	transmission-remote -a $(xclip -selection clipboard -o)
+	dunstify -t 3000 "torrent added" -i $XDG_CONFIG_HOME/dunst/icons/transmission.svg
+	xclip -selection clipboard /tmp/the_void
+	cleanup
+}
+
+twitch(){
+	processed=$selection
+	streamlink -p mpv $(xclip -selection clipboard -o) best &
+	dunstify -t 3000 "loading stream" "$(xclip -selection clipboard -o)" -i $XDG_CONFIG_HOME/dunst/icons/twitch.svg
+	xclip -selection clipboard /tmp/the_void
+	cleanup
+}
+
+reddit(){
+	processed=$selection
+	xdg-open $(xclip -selection clipboard -o)
+	xclip -selection clipboard /tmp/the_void
+	cleanup
+}
+
+ignore(){
+	processed=$selection
+	cleanup
+}
+
+main

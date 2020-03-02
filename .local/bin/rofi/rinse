@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# that tune? rinsed it!
+
+you_too(){
+	dunstify -C 202020
+	killall -q dunst
+	exit
+}
+
+killall -q dunst
+dunst -config $XDG_CONFIG_HOME/dunst/dunst.mini &
+up_next=$(mpc queued)
+dunstify -r 202020 -t 600000 "  $up_next"
+song_selection=$(mpc playlist | rofi -dmenu -i -format d)
+[ ! "$song_selection" ]	&& you_too
+mpc -q play $song_selection
+you_too

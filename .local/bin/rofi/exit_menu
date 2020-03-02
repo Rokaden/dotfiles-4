@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# exit menu using rofi
+
+bye_d(){
+	dunstify -C 449944
+	killall -q dunst
+	exit
+}
+
+killall -q dunst
+dunst -config $XDG_CONFIG_HOME/dunst/dunst.mini &
+dunstify -r 449944 -t 600000 "going somehwere...?"
+foo=$(echo "logout\nreboot" | rofi -dmenu -i -format d)
+[ ! $foo ] && bye_d
+[ $foo = 1 ] && bspc quit || systemctl reboot

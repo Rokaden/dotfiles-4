@@ -1,0 +1,13 @@
+#!/bin/sh
+
+bspc desktop 1 -f
+pgrep mpv && xdotool mousemove 400 400 && bspc node pointed -f
+pgrep sxiv || exit
+bspc node $(head -n1 /tmp/pretty_colours_id) -f -a
+visibility=$(xdotool search --all --onlyvisible --class "companion")
+if [ ! $visibility ]; then
+	xdotool mousemove 400 400
+	bspc node pointed -f
+else
+	bspc node $(head -n1 /tmp/my_companion_id) -f
+fi
