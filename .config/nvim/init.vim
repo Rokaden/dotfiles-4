@@ -94,6 +94,11 @@ vnoremap <silent> # :<C-u>call VisualSelection('', '')<CR>?<C-R>=@/<CR><CR>
 " like <leader>w saves the current file
 let mapleader = ","
 
+" swift exit
+nmap <leader>q :q<cr>
+" save first
+nmap <leader>wq :wq<cr>
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
