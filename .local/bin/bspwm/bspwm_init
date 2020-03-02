@@ -30,6 +30,9 @@ start_bg_apps(){
 	touch /tmp/my_playlist_id
 	echo "$my_playlist_id" > /tmp/my_playlist_id
 
+	# start albumart display
+	art_show init &
+
 	# start kitty scratch-term
 	[ -f /tmp/my_companion_id ] && rm -f /tmp/my_companion_id
 	launch_kitty --class "companion" --name "companion" --title "companion"
@@ -57,8 +60,7 @@ start_bg_apps(){
 
 	#start with big cat focused
 	sleep 0.2
-	bspc desktop 1 -f
-	bspc node $(head -n1 /tmp/big_cat_id) -f -a
+	feng_shui
 	sleep 1
 	rm -f /tmp/time_to
 	exit

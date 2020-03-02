@@ -97,7 +97,7 @@ let mapleader = ","
 " swift exit
 nmap <leader>q :q<cr>
 " save first
-nmap <leader>wq :wq<cr>
+nmap <leader>r :wq<cr>
 
 " Fast saving
 nmap <leader>w :w!<cr>

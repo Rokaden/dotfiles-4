@@ -23,43 +23,20 @@ main(){
 }
 
 mpd_trigger(){
-    processed=$(cat /tmp/ace_temp_buffer)
-    xclip -selection clipboard /tmp/ace_temp_buffer
-    rm -f /tmp/ace_temp_buffer
-    neocover
-    show_art=$(head -n1 /tmp/the_art_show)
-    case "$show_art" in
-	yes) update_art ;;
-	init) update_art init ;;
-	swap) update_art swap ;;
-	*) cleanup ;;
-    esac
-    cleanup
-}
-
-update_art(){
-    if [ $1 = init ]; then
-	echo "yes" > /tmp/the_art_show
-	return
-    elif [ $1 = swap ]; then
-	echo "yes" > /tmp/the_art_show
-	pgrep sxiv && kill -9 /tmp/art_show_id
-	art_show delay
-	return
-    fi
-    pgrep sxiv && kill -9 /tmp/art_show_id
-    sleep 0.1
-    art_show
-    [ $first_run = 0 ] && pgrep fancy_writing && pkill fancy_writing --signal=USR1
-    first_run=0
-    return
+	processed=$(cat /tmp/ace_temp_buffer)
+	xclip -selection clipboard /tmp/ace_temp_buffer
+        rm -f /tmp/ace_temp_buffer
+	neocover
+	[ $first_run = 0 ] && pgrep fancy_writing && pkill fancy_writing --signal=USR1
+	first_run=0
+	cleanup
 }
 
 cleanup(){
-    [ -d $HOME/.w3m ] && rm -rf $HOME/.w3m
-    [ -d $HOME/.nv ] && rm -rf $HOME/.nv
-    [ -f $HOME/.fehbg ] && rm -f $HOME/.fehbg
-    main
+	[ -d $HOME/.w3m ] && rm -rf $HOME/.w3m
+        [ -d $HOME/.nv ] && rm -rf $HOME/.nv
+	[ -f $HOME/.fehbg ] && rm -f $HOME/.fehbg
+	main
 }
 
 youtube(){

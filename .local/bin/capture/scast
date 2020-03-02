@@ -73,6 +73,17 @@ cnvidia(){
 	return
 }
 
+demo_record(){
+	ffmpeg -loglevel 16 -threads 4 -probesize 10M -framerate ${frameRate} -vsync 1 \
+		-thread_queue_size 512 -f x11grab -s ${currentRes} -r ${frameRate} -i :0.0 \
+		-thread_queue_size 512 -f pulse -ac 2 -channel_layout stereo -i 0 -c:a libopus -vbr on -compression_level ${audioQuality} \
+		-c:v h264_nvenc -qp ${videoQuality} "${recordLocation}/$(date +%y%m%d%H%M%S).mkv"
+	wait
+	exit
+}
+
+[ $1 = "demo" ] && demo_record
+
 case "$cgpu" in
 	*intel*) cintel ;;
 	*nvidia*) cnvidia ;;

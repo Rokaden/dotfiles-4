@@ -1,18 +1,9 @@
 #!/bin/sh
 
-# script to update album art displayed on home workspace
+# script to display album art on home workspace
 
 [ -f /tmp/art_show_id ] && rm -f /tmp/art_show_id
-[ -f /tmp/albumart.png ] && rm -f /tmp/albumart.png
-
-convert /tmp/neocover.png -resize 500x500^ \
-          -gravity center -extent 500x500 \
-          -flatten /tmp/albumart.png
-
-[ $1 = "delay" ] && sleep 0.7
+[ $1 = "init" ] && sleep 0.4
 bspc rule -a Sxiv:\* -o desktop=1 state=floating
 sxiv -g 500x500+1150+220 -p -b /tmp/albumart.png &
 echo $! > /tmp/art_show_id
-home_check=$(bspc query -d focused -T | jq '.name')
-sleep 0.25
-[ $home_check = '"1"' ] && feng_shui

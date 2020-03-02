@@ -28,6 +28,9 @@ copy_new(){
 	[ -f /tmp/neocover.png ] || cp /tmp/dartc.png /tmp/neocover.png
 	[ -f /tmp/dartc.png ] || cp $XDG_CONFIG_HOME/dunst/icons/no_art.png /tmp/dartc.png
 	[ -f /tmp/dartn.png ] || cp $XDG_CONFIG_HOME/dunst/icons/no_art.png /tmp/dartn.png
+	convert /tmp/neocover.png -resize 500x500^ \
+		-gravity center -extent 500x500 \
+		-flatten /tmp/albumart.png
 	exit
 }
 
