@@ -4,6 +4,7 @@ export SCRIPTS=$HOME/.local/bin
 export MUSIC=$HOME/music
 export VIDEO=$HOME/video
 export WPG_TEMPLATES=$XDG_CONFIG_HOME/wpg/templates
+export DOTFILES=$HOME/working/git/dotfiles
 
 # home folder cleanup
 export XAUTHORITY=$XDG_RUNTIME_DIR/Xauthority
@@ -38,5 +39,5 @@ export EDITOR=nvim
 export BROWSER=qutebrowser
 export FILE="launch_litty ranger"
 export QT_QPA_PLATFORMTHEME="qt5ct"
-export FZF_DEFAULT_COMMAND='--hidden --ignore .git'
+export FZF_DEFAULT_COMMAND='find .'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
