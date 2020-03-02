@@ -1,5 +1,5 @@
 [colors]
-    background = "{active}"
+    background = "{color2}"
     foreground = "{color15}"
 
 [global]
