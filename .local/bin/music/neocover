@@ -10,7 +10,6 @@ up_next=$(mpc -f %file% queued)
 rm /tmp/neocover.png
 rm /tmp/dartc.png
 rm /tmp/dartn.png
-rm $XDG_CACHE_HOME/thumbnails/neofetch/*neocover*
 
 # main functions
 art_check(){
