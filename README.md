@@ -11,7 +11,7 @@
 ~/.config/rofi/config.rasi
 ~/.local/share/localweb/startpage/index.html
 ~/.local/share/localweb/startpage/script/script.js
-~/.local/share/localweb/startpage/style.css
+~/.local/share/localweb/startpage/style/style.css
 ```
 
 ### meme login screen
