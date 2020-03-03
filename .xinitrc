@@ -62,7 +62,4 @@ theme_change
 
 # }}}
 
-# un/comment this to dis/enable demo recording
-# scast demo &
-
 exec bspwm
