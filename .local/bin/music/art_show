@@ -3,7 +3,9 @@
 # script to display album art on home workspace
 
 [ -f /tmp/art_show_id ] && rm -f /tmp/art_show_id
-[ $1 = "init" ] && sleep 0.4
+while ! [ -f /tmp/albumart.png ]; do
+	sleep 0.2
+done
 bspc rule -a Sxiv:\* -o desktop=1 state=floating
 sxiv -g 500x500+1150+220 -p -b /tmp/albumart.png &
 echo $! > /tmp/art_show_id

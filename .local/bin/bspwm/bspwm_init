@@ -31,7 +31,7 @@ start_bg_apps(){
 	echo "$my_playlist_id" > /tmp/my_playlist_id
 
 	# start albumart display
-	art_show init &
+	art_show &
 
 	# start kitty scratch-term
 	[ -f /tmp/my_companion_id ] && rm -f /tmp/my_companion_id
