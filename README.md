@@ -1,6 +1,10 @@
-# nearly finished, tweaking a few things then I'll record a new demo and create an install script
+# a wild demo has appeared...
+https://www.youtube.com/watch?v=FKaFDkBuQUc
 
-### these files are wpg templates, use wpg -ta /path/to/file to add:
+### install script up next
+
+
+#### these files are wpg templates, use wpg -ta /path/to/file to add:
 
 ```
 ~/.config/dunst/dunstrc
@@ -14,7 +18,7 @@
 ~/.local/share/localweb/startpage/style/style.css
 ```
 
-### meme login screen
+#### meme login screen
 `sudo cp /path/drake_navy_issue /etc/issue`
 
 
