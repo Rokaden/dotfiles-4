@@ -18,12 +18,16 @@ https://www.youtube.com/watch?v=FKaFDkBuQUc
 ~/.local/share/localweb/startpage/style/style.css
 ```
 
+the files in the .config/wpg/templates folder are backups, don't copy them (probably shouldn't have included them)
+
+
 #### meme login screen
 `sudo cp /path/drake_navy_issue /etc/issue`
 
 
 #### a list of all my packages can be found in /etc so you have an idea for dependencies until I finish the install script
-not featured on that list is dmenu & sxiv (you need sxiv, dmenu is just there for nostalgia), I run custom builds of these but the standard bins will work fine.
+##### not featured on that list is dmenu & sxiv (you need sxiv, dmenu is just there for nostalgia), I run custom builds of these but the standard bins will work fine.
+
 
 
 old i3 config can still be found on a different branch, most of the stuff in it has been transfered to this (some stuff improved).

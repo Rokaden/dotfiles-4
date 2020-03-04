@@ -74,15 +74,15 @@ c.colors.completion.fg = '{color7}'
 
 ## Background color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.bg = '{color1}'
+c.colors.completion.item.selected.bg = '{active}'
 
 ## Bottom border color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.border.bottom = '{color1}'
+c.colors.completion.item.selected.border.bottom = '{active}'
 
 ## Top border color of the selected completion item.
 ## Type: QssColor
-c.colors.completion.item.selected.border.top = '{color1}'
+c.colors.completion.item.selected.border.top = '{active}'
 
 ## Foreground color of the selected completion item.
 ## Type: QtColor
@@ -90,11 +90,11 @@ c.colors.completion.item.selected.fg = '{color7}'
 
 ## Foreground color of the matched text in the selected completion item.
 ## Type: QtColor
-c.colors.completion.item.selected.match.fg = '{color6}'
+c.colors.completion.item.selected.match.fg = '{color8}'
 
 ## Foreground color of the matched text in the completion.
 ## Type: QtColor
-c.colors.completion.match.fg = '{color6}'
+c.colors.completion.match.fg = '{color8}'
 
 ## Background color of the completion widget for odd rows.
 ## Type: QssColor
@@ -110,7 +110,7 @@ c.colors.completion.scrollbar.fg = '{active}'
 
 ## Background color for the download bar.
 ## Type: QssColor
-c.colors.downloads.bar.bg = '{color2}'
+c.colors.downloads.bar.bg = '{color0}'
 
 ## Background color for downloads with errors.
 ## Type: QtColor
@@ -165,7 +165,7 @@ c.colors.hints.fg = '{color7}'
 
 ## Font color for the matched part of hints.
 ## Type: QtColor
-c.colors.hints.match.fg = '{color5}'
+c.colors.hints.match.fg = '{color8}'
 
 ## Background color of the keyhint widget.
 ## Type: QssColor
@@ -193,15 +193,15 @@ c.colors.hints.match.fg = '{color5}'
 
 ## Background color of an info message.
 ## Type: QssColor
-# c.colors.messages.info.bg = 'black'
+c.colors.messages.info.bg = '{color4}'
 
 ## Border color of an info message.
 ## Type: QssColor
-# c.colors.messages.info.border = '#333333'
+c.colors.messages.info.border = '{color4}'
 
 ## Foreground color of an info message.
 ## Type: QssColor
-# c.colors.messages.info.fg = 'white'
+c.colors.messages.info.fg = '{color7}'
 
 ## Background color of a warning message.
 ## Type: QssColor
@@ -249,7 +249,7 @@ c.colors.hints.match.fg = '{color5}'
 
 ## Background color of the statusbar in command mode.
 ## Type: QssColor
-c.colors.statusbar.command.bg = '{color2}'
+c.colors.statusbar.command.bg = '{color1}'
 
 ## Foreground color of the statusbar in command mode.
 ## Type: QssColor
@@ -265,7 +265,7 @@ c.colors.statusbar.command.fg = '{color7}'
 
 ## Background color of the statusbar in insert mode.
 ## Type: QssColor
-c.colors.statusbar.insert.bg = '{color0}'
+c.colors.statusbar.insert.bg = '{color5}'
 
 ## Foreground color of the statusbar in insert mode.
 ## Type: QssColor
@@ -273,7 +273,7 @@ c.colors.statusbar.insert.fg = '{color7}'
 
 ## Background color of the statusbar.
 ## Type: QssColor
-c.colors.statusbar.normal.bg = '{color1}'
+c.colors.statusbar.normal.bg = '{color2}'
 
 ## Foreground color of the statusbar.
 ## Type: QssColor
@@ -281,11 +281,11 @@ c.colors.statusbar.normal.fg = '{color7}'
 
 ## Background color of the statusbar in passthrough mode.
 ## Type: QssColor
-# c.colors.statusbar.passthrough.bg = 'darkblue'
+c.colors.statusbar.passthrough.bg = '{color3}'
 
 ## Foreground color of the statusbar in passthrough mode.
 ## Type: QssColor
-# c.colors.statusbar.passthrough.fg = 'white'
+c.colors.statusbar.passthrough.fg = '{color7}'
 
 ## Background color of the statusbar in private browsing mode.
 ## Type: QssColor

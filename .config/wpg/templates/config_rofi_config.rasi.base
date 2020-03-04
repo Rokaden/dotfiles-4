@@ -1,20 +1,20 @@
 * {{
     spacing: 2;
-    background-color: {color8}00;
+    background-color: {color0}00;
     border-color: {color0}FF;
     text-color: {color15};
-    anchor: south east;
-    location: south east;
+    anchor: south west;
+    location: south west;
 }}
 #window {{
     font: "Iosevka Nerd Font 12";
-    width: 18%;
+    width: 346px;
     transparency: "real";
-    background-color: {color8}00;
+    background-color: {color0}00;
     border: 0;
     padding: 0% 0% 1em 0%;
-    x-offset: -4px;
-    y-offset: 16px;
+    x-offset: 4px;
+    y-offset: -39px;
 }}
 #mainbox {{
     padding: 0px;
@@ -22,9 +22,9 @@
     spacing: 1%;
 }}
 #message {{
-    border: 3px; 
-    padding: 1em; 
-    background-color: #000000FF; 
+    border: 3px;
+    padding: 1em;
+    background-color: #000000FF;
     text-color: {color15};
 }}
 #textbox normal {{
@@ -40,7 +40,7 @@
 
     columns: 1;
     lines: 6;
-    background-color: {inactive}FF; 
+    background-color: {inactive}FF;
 }}
 #element {{
     border: 0;
@@ -117,3 +117,5 @@
     margin:     0px 0.3em 0em 0em ;
     text-color: {color15};
 }}
+
+/* vim:ft=css
