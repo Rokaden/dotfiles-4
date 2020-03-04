@@ -22,4 +22,7 @@ https://www.youtube.com/watch?v=FKaFDkBuQUc
 `sudo cp /path/drake_navy_issue /etc/issue`
 
 
+#### a list of all my packages can be found in /etc so you have an idea for dependencies until I finish the install script
+
+
 old i3 config can still be found on a different branch, most of the stuff in it has been transfered to this (some stuff improved).

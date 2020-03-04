@@ -1,0 +1,103 @@
+acpi                	Client for battery, power, and thermal readings
+acpilight           	a backward-compatible xbacklight replacement based on ACPI
+atomicparsley       	A command line program for reading, parsing and setting iTunes-style metadata in MPEG4 files
+atool               	A script for managing file archives of various types
+base                	Minimal package set to define a basic Arch Linux installation
+bash-completion     	Programmable completion for the bash shell
+bbswitch            	Kernel module allowing to switch dedicated graphics card on Optimus laptops
+clipnotify          	Polling-free clipboard notifier
+dunst               	Customizable and lightweight notification-daemon
+e2fsprogs           	Ext2/3/4 filesystem utilities
+exfat-utils         	Utilities for exFAT file system
+expac               	pacman database extraction utility
+gimp                	GNU Image Manipulation Program
+git                 	the fast distributed version control system
+go                  	Core compiler tools for the Go programming language
+gtk-engine-murrine  	GTK2 engine to make your desktop look like a 'murrina', an italian word meaning the art glass works done by Venicians glass blowers.
+gucharmap           	Gnome Unicode Charmap
+highlight           	Fast and flexible source code highlighter (CLI version)
+intel-ucode         	Microcode update files for Intel CPUs
+jq                  	Command-line JSON processor
+libcaca             	Color AsCii Art library
+libnotify           	Library for sending desktop notifications
+linux-firmware      	Firmware files for Linux
+linux               	The Linux kernel and modules
+lxappearance        	Feature-rich GTK+ theme switcher of the LXDE Desktop
+man-db              	A utility for reading man pages
+man-pages           	Linux man pages
+mediainfo           	Supplies technical and tag information about a video or audio file (CLI interface)
+mlocate             	Merging locate/updatedb implementation
+mpc                 	Minimalist command line interface to MPD
+mpd                 	Flexible, powerful, server-side application for playing music
+mpv                 	a free, open source, and cross-platform media player
+ncmpcpp             	Almost exact clone of ncmpc with some new features
+neofetch            	A CLI system information tool written in BASH that supports displaying images.
+neovim              	Fork of Vim aiming to improve user experience, plugins, and GUIs
+networkmanager      	Network connection manager and user applications
+ntfs-3g             	NTFS filesystem driver and utilities
+nvidia              	NVIDIA drivers for linux
+nvidia-settings     	Tool for configuring the NVIDIA graphics driver
+p7zip               	Command-line file archiver with high compression ratio
+pacman-contrib      	Contributed scripts and tools for pacman systems
+pbzip2              	Parallel implementation of the bzip2 block-sorting file compressor
+perl-image-exiftool 	Reader and rewriter of EXIF informations that supports raw files
+picom               	X compositor that may fix tearing issues
+pigz                	Parallel implementation of the gzip file compressor
+poppler             	PDF rendering library based on xpdf 3.0
+pulseaudio          	A featureful, general-purpose sound server
+pulseaudio-alsa     	ALSA Configuration for PulseAudio
+pulsemixer          	CLI and curses mixer for pulseaudio
+python2             	A high-level scripting language
+python-chardet      	Python3 module for character encoding auto-detection
+python-fonttools    	A library to manipulate font files from Python
+python-pynvim       	Python client for Neovim
+qt5ct               	Qt5 Configuration Utility
+qt5-styleplugins    	Additional style plugins for Qt5
+qutebrowser         	A keyboard-driven, vim-like browser based on PyQt5
+reflector           	A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
+rofi                	A window switcher, application launcher and dmenu replacement
+streamlink          	CLI program that launches streams from various streaming services in a custom video player (livestreamer fork)
+task                	A command-line todo list manager
+thefuck             	Magnificent app which corrects your previous console command
+transmission-cli    	Fast, easy, and free BitTorrent client (CLI tools, daemon and web client)
+unace               	An extraction tool for the proprietary ace archive format
+unrar               	The RAR uncompression program
+unzip               	For extracting and viewing files in .zip archives
+w3m                 	Text-based Web browser as well as pager
+xclip               	Command line interface to the X11 clipboard
+xcursor-comix       	Comix X Cursor Theme
+xcursor-simpleandsoft	A simple and soft X cursor theme
+xdotool             	Command-line X11 automation tool
+xorg-xdpyinfo       	Display information utility for X
+xorg-xinit          	X.Org initialisation program
+xorg-xsetroot       	Classic X utility to set your root window background to a given pattern or color
+xorg-xwininfo       	Command-line utility to print information about windows on an X server
+xsettingsd          	Provides settings to X11 applications via the XSETTINGS specification
+youtube-dl          	A small command-line program to download videos from YouTube.com and a few more sites
+zip                 	Compressor/archiver for creating and modifying zipfiles
+zsh                 	A very advanced and programmable command interpreter (shell) for UNIX
+zsh-syntax-highlighting	Fish shell like syntax highlighting for Zsh
+bspwm-git           	A tiling window manager based on binary space partitioning
+cairo-infinality-remix	Cairo vector graphics library with Infinality patch support
+dashbinsh           	Relink /bin/sh to dash
+dash-static         	POSIX compliant shell that aims to be as small as possible. Statically compiled
+ddate               	PERPETUAL DATE CONVERTER FROM GREGORIAN TO POEE CALENDAR
+dragon-drag-and-drop	Simple drag-and-drop source/sink for X
+feh-git             	Fast and light imlib2-based image viewer
+fontconfig-infinality-remix	A library for configuring and customizing font access, optimized for Infinality Remix.
+freetype2-infinality-remix	TrueType font rendering library with Infinality Remix patches
+fzf-git             	Command-line fuzzy finder
+gotop               	A terminal based graphical activity monitor inspired by gtop and vtop
+kitty-git           	A modern, hackable, featureful, OpenGL based terminal emulator
+neovim-symlinks     	Runs neovim if vi or vim is called
+optimus-manager     	Management utility to handle GPU switching for Optimus laptops
+polybar             	A fast and easy-to-use status bar
+python-bidi         	BIDI algorithm related functions
+python-ueberzug     	ueberzug is an python script which aims to replace w3mimgdisplay
+pywal-git           	Generate and change color-schemes on the fly.
+ranger-git          	A simple, vim-like file manager.
+spaceship-prompt-git	A Zsh prompt for Astronauts
+sxhkd-git           	A simple X hotkey daemon
+unclutter-xfixes-git	unclutter-xfixes is a rewrite of unclutter using the x11-xfixes extension.
+wpgtk-git           	A gui wallpaper chooser that changes your Openbox theme, GTK theme and Tint2 theme
+yay                 	Yet another yogurt. Pacman wrapper and AUR helper written in go.
