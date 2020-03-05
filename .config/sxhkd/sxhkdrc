@@ -28,6 +28,10 @@ super + k
 super + o
     launch_tremc
 
+#: newsboat
+super + i
+    launch_newsboat
+
 #: }}}
 
 #: rofi/dmenu related {{{
@@ -221,7 +225,7 @@ super + {_,alt + } space
 
 #: focus floating layer
 super + c
-    bspc node last.local.floating -f
+    bspc node next.local.floating -f
 
 #: enter fullscreen (to exit select a different mode)
 super + shift + space
