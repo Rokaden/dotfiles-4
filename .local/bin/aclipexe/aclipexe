@@ -13,7 +13,7 @@ main(){
 			UniqueString4ncmpcpp2TriggerUpdate) mpd_trigger ;;
 			*youtube.com/watch*) youtube ;;
 			*youtu.be/watch*) youtube ;;
-			# *magnet*tracker*) torrent ;;
+			*magnet*tracker*) torrent ;;
 			*twitch.tv/*) twitch ;;
 			https://*.redd*/*) reddit ;;
 			*) ignore ;;

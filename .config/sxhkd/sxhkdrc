@@ -24,6 +24,10 @@ super + ctrl + m
 super + k
     launch_vim
 
+#: tremc (transmission front-end)
+super + o
+    launch_tremc
+
 #: }}}
 
 #: rofi/dmenu related {{{
@@ -51,6 +55,10 @@ super + alt + Return
 #: run the testscript
 super + j
     testscript
+
+#: open transmission web interface
+super + shift + o
+    qutebrowser localhost:9091
 
 #: }}}
 
