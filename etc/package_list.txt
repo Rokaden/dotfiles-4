@@ -1,5 +1,6 @@
 acpi                	Client for battery, power, and thermal readings
 acpilight           	a backward-compatible xbacklight replacement based on ACPI
+aria2               	Download utility that supports HTTP(S), FTP, BitTorrent, and Metalink
 atomicparsley       	A command line program for reading, parsing and setting iTunes-style metadata in MPEG4 files
 atool               	A script for managing file archives of various types
 base                	Minimal package set to define a basic Arch Linux installation
@@ -34,6 +35,7 @@ ncmpcpp             	Almost exact clone of ncmpc with some new features
 neofetch            	A CLI system information tool written in BASH that supports displaying images.
 neovim              	Fork of Vim aiming to improve user experience, plugins, and GUIs
 networkmanager      	Network connection manager and user applications
+newsboat            	An RSS/Atom feed reader for text terminals
 ntfs-3g             	NTFS filesystem driver and utilities
 nvidia              	NVIDIA drivers for linux
 nvidia-settings     	Tool for configuring the NVIDIA graphics driver
@@ -63,7 +65,6 @@ transmission-cli    	Fast, easy, and free BitTorrent client (CLI tools, daemon a
 unace               	An extraction tool for the proprietary ace archive format
 unrar               	The RAR uncompression program
 unzip               	For extracting and viewing files in .zip archives
-w3m                 	Text-based Web browser as well as pager
 xclip               	Command line interface to the X11 clipboard
 xcursor-comix       	Comix X Cursor Theme
 xcursor-simpleandsoft	A simple and soft X cursor theme
@@ -98,6 +99,7 @@ pywal-git           	Generate and change color-schemes on the fly.
 ranger-git          	A simple, vim-like file manager.
 spaceship-prompt-git	A Zsh prompt for Astronauts
 sxhkd-git           	A simple X hotkey daemon
+tremc-git           	Curses interface for transmission - python3 fork of transmission-remote-cli
 unclutter-xfixes-git	unclutter-xfixes is a rewrite of unclutter using the x11-xfixes extension.
 wpgtk-git           	A gui wallpaper chooser that changes your Openbox theme, GTK theme and Tint2 theme
 yay                 	Yet another yogurt. Pacman wrapper and AUR helper written in go.
