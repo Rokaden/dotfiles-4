@@ -2,7 +2,6 @@
 
 # (a)utomatic (clip)board (exe)cution
 
-[ -f /tmp/the_void ] || touch /tmp/the_void
 processed=""
 first_run=1
 
@@ -43,7 +42,7 @@ youtube(){
 	processed=$selection
 	youtube-dl $(xclip -selection clipboard -o) &
 	dunstify -r 3001 -t 3000 "downloading" "$(xclip -selection clipboard -o)" -i $XDG_CONFIG_HOME/dunst/icons/ytdl_sml.png
-	xclip -selection clipboard /tmp/the_void
+	xclip -selection clipboard /dev/null
 	cleanup
 }
 
@@ -51,7 +50,7 @@ torrent(){
 	processed=$selection
 	transmission-remote -a $(xclip -selection clipboard -o)
 	dunstify -t 3000 "torrent added" -i $XDG_CONFIG_HOME/dunst/icons/transmission.svg
-	xclip -selection clipboard /tmp/the_void
+	xclip -selection clipboard /dev/null
 	cleanup
 }
 
@@ -59,14 +58,14 @@ twitch(){
 	processed=$selection
 	streamlink -p mpv $(xclip -selection clipboard -o) best &
 	dunstify -t 3000 "loading stream" "$(xclip -selection clipboard -o)" -i $XDG_CONFIG_HOME/dunst/icons/twitch.svg
-	xclip -selection clipboard /tmp/the_void
+	xclip -selection clipboard /dev/null
 	cleanup
 }
 
 reddit(){
 	processed=$selection
 	xdg-open $(xclip -selection clipboard -o)
-	xclip -selection clipboard /tmp/the_void
+	xclip -selection clipboard /dev/null
 	cleanup
 }
 

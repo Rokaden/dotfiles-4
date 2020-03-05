@@ -10,7 +10,6 @@
 [ -f /tmp/pretty_colours_id ] && rm -f /tmp/pretty_colours_id
 [ -f /tmp/art_show_id ] && rm -f /tmp/art_show_id
 [ -f /tmp/fancy_writing_id ] && rm -f /tmp/fancy_writing_id
-[ -f /tmp/the_void ] && rm -f /tmp/the_void
 [ -f /tmp/ace_temp_buffer ] && rm -f /tmp/ace_temp_buffer
 [ -d /tmp/startup.lock ] && rm -rf /tmp/startup.lock
 [ -d /tmp/the.lock ] && rm -rf /tmp/the.lock

@@ -31,6 +31,7 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'junegunn/limelight.vim'
     Plug 'vim-airline/vim-airline'
     Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 call plug#end()
 
