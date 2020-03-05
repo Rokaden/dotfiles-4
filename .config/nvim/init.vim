@@ -113,6 +113,9 @@ command! W execute 'w !sudo tee % > /dev/null' <bar> edit!
 " goyo mode
 nmap <leader>g :Goyo<cr>
 
+" toggle markdown preview
+nmap <leader>p <Plug>MarkdownPreviewToggle
+
 " }}}
 
 " Ignore compiled files
@@ -122,6 +125,9 @@ if has("win16") || has("win32")
 else
     set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 endif
+
+" markdown preview options
+let g:mkdp_browser = 'qute_markdown'
 
 " }}}
 

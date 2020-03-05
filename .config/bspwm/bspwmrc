@@ -47,6 +47,7 @@ bspc rule -a "big cat" desktop=1 state=floating rectangle=900x920+87+89
 bspc rule -a "pretty colours" desktop=1 state=floating rectangle=440x410+1462+652
 bspc rule -a "fancy writing" desktop=1 state=floating rectangle=650x200+1252+60 hidden=on
 bspc rule -a "Gimp" desktop=4 follow=on
+bspc rule -a "Dragon-drag-and-drop" state=floating rectangle=188x33+4+30 layer=above sticky=on
 
 # startup
 h_name=$(head -n 1 /etc/hostname)
