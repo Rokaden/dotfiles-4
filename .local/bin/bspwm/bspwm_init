@@ -13,7 +13,7 @@ restore_colors(){
 
 start_bg_apps(){
 	# setup initial desktops
-	bspc monitor -d 1 2 3 4 9 10
+	bspc monitor -d $BSPWM_DESKTOPS
 	bspc desktop 10 -f
 
 	# spin up the essentials

@@ -227,9 +227,9 @@ super + {_,alt + } space
 super + c
     bspc node next.local.floating -f
 
-#: enter fullscreen (to exit select a different mode)
+#: fullscreen toggle
 super + shift + space
-    bspc node -t fullscreen
+    alt_fullscreen
 
 #: toggle tiling modes
 super + {_,shift + } t

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# workaround fullscreen for transparency windows
+
+enter_fullscreen(){
+	[ -f /tmp/breadcrumbs ] || touch /tmp/breadcrumbs
+	echo $(bspc query -d focused -T | jq '.name') | sed 's/\"//g' > /tmp/breadcrumbs
+	pgrep polybar > /dev/null 2>&1 && killall -q polybar
+	bspc config ignore_ewmh_struts true
+	bspc config top_padding 0
+	bspc monitor -a fs
+	bspc node -d fs --follow
+	bspc desktop -l monocle
+	exit
+}
+
+exit_fullscreen(){
+	bspc node -d $(head -n1 /tmp/breadcrumbs) --follow
+	bspc monitor -d $BSPWM_DESKTOPS
+	bspc wm -r
+	rm /tmp/breadcrumbs
+	exit
+}
+
+fullscreen_check=$(bspc query -d focused -T | jq '.name')
+[ $fullscreen_check = '"fs"' ] && exit_fullscreen || enter_fullscreen
