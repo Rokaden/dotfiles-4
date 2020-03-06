@@ -10,6 +10,10 @@ if [ $home_desktop = '"1"' ]; then
 	wait
 	bspc node $(head -n1 /tmp/big_cat_id) -g hidden=off
 	bspc node $(head -n1 /tmp/big_cat_id) -f
+elif [ $home_desktop = '"2"' ]; then
+	bspc node -o 0.65
+	bspc node -p east
+	launch_kitty newsboat
 else
 	launch_kitty newsboat
 fi
