@@ -4,5 +4,4 @@
 
 bspc wm -r
 pkill -USR1 -x sxhkd
-unfuck_ace
 bspwm_init reinit
