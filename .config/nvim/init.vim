@@ -116,6 +116,9 @@ nmap <leader>g :Goyo<cr>
 " toggle markdown preview
 nmap <leader>p <Plug>MarkdownPreviewToggle
 
+" quick script start
+nmap <leader>s i#!/bin/sh<cr><cr>#<Esc>:w! /tmp/new_script<cr>:e<cr><End>a<Space>
+
 " }}}
 
 " Ignore compiled files
