@@ -27,7 +27,7 @@ the files in the .config/wpg/templates folder are backups, don't copy them (prob
 I use a custom sxiv build, my config.h if you want the same settings
 
 #### ranger
-currently ranger runs like shit in kitty when previewing stuff, these files are from a testing branch of ranger that almost entirely fix the issues
+currently ranger runs like shit in kitty when previewing stuff, these files are from a testing branch of ranger that help somewhat (less lag, more visual glitches)
 
 ##### a list of all my packages can be found in /etc so you have an idea for dependencies until I finish the install script
 
