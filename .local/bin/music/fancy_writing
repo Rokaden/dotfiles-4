@@ -52,7 +52,6 @@ other_info(){
                         loop
                 fi
         done
-        [ -f /tmp/fancy_message ] && rm /tmp/fancy_message
         main
 }
 
@@ -110,6 +109,11 @@ display_text(){
         kitty +kitten icat /tmp/fancy_writing.png > /dev/null 2>&1
         sleep 0.2
         bspc node $(head -n 1 /tmp/fancy_writing_id) --flag hidden=off
+        if [ -f /tmp/fancy_message ]; then
+                rm /tmp/fancy_message
+                loop
+                main
+        fi
         return
 }
 

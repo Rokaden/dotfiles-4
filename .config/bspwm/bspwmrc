@@ -45,8 +45,8 @@ bspc config left_monocle_padding	0
 bspc rule -a HideMe hidden=on
 bspc rule -a Sxiv:\* state=floating
 bspc rule -a mpv state=floating rectangle=1280x720+0+0 center=true
-bspc rule -a "my playlist" state=floating rectangle=640x480+0+0 center=true hidden=on sticky=on
-bspc rule -a "companion" state=floating rectangle=800x600+0+0 center=true hidden=on sticky=on
+bspc rule -a "my playlist" state=floating rectangle=640x480+0+0 center=true hidden=on sticky=on layer=above
+bspc rule -a "companion" state=floating rectangle=800x600+0+0 center=true hidden=on sticky=on layer=above
 bspc rule -a "file manager" desktop=3
 bspc rule -a "big cat" desktop=1 state=floating rectangle=900x920+87+89
 bspc rule -a "pretty colours" desktop=1 state=floating rectangle=440x410+1462+652
