@@ -62,7 +62,7 @@ HISTFILE=$ZDOTDIR/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-setopt incappendhistory autocd beep extendedglob nomatch COMPLETE_ALIASES
+setopt incappendhistory autocd beep extendedglob nomatch aliases correctall #COMPLETE_ALIASES
 unsetopt notify
 
 bindkey -e
@@ -75,11 +75,11 @@ compinit
 _comp_options+=(globdots)
 
 #// only useful when sorting music collection
-	#autoload bashcompinit
-	#bashcompinit
-	#_get_comp_words_by_ref() { :; }
-	#compopt() { :; }
-	#_filedir() { :; }
+	autoload bashcompinit
+	bashcompinit
+	_get_comp_words_by_ref() { :; }
+	compopt() { :; }
+	_filedir() { :; }
 	#eval "$(beet completion)"
 #// -----------------------------------------
 
