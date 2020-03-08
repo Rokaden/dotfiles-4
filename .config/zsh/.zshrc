@@ -85,7 +85,6 @@ _comp_options+=(globdots)
 
 kitty + complete setup zsh | source /dev/stdin
 . /etc/profile.d/fzf.zsh
-eval "$(thefuck --alias)"
 
 source $ARTISTRY/alias_list
 
