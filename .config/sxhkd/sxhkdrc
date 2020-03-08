@@ -70,6 +70,10 @@ super + p
 super + shift + p
     private_script 2
 
+#: steam
+super + l
+    steam
+
 #: }}}
 
 #: }}}
