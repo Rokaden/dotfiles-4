@@ -33,4 +33,9 @@ currently ranger runs like shit in kitty when previewing stuff, these files are 
 
 
 ---
+the picture of Ellie from my new neofetch config was taken from:
+
+https://www.deviantart.com/ashish-kumar/art/The-Last-OF-Us-Ellie-Face-Render-By-Ashish913-389632011
+
+---
 old i3 config can still be found on a different branch, most of the stuff in it has been transfered to this (some stuff improved).
