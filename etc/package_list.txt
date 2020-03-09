@@ -19,6 +19,8 @@ gucharmap           	Gnome Unicode Charmap
 highlight           	Fast and flexible source code highlighter (CLI version)
 intel-ucode         	Microcode update files for Intel CPUs
 jq                  	Command-line JSON processor
+lib32-mesa          	An open-source implementation of the OpenGL specification (32-bit)
+lib32-nvidia-utils  	NVIDIA drivers utilities (32-bit)
 libcaca             	Color AsCii Art library
 libnotify           	Library for sending desktop notifications
 linux-firmware      	Firmware files for Linux
@@ -58,9 +60,10 @@ qt5-styleplugins    	Additional style plugins for Qt5
 qutebrowser         	A keyboard-driven, vim-like browser based on PyQt5
 reflector           	A Python 3 module and script to retrieve and filter the latest Pacman mirror list.
 rofi                	A window switcher, application launcher and dmenu replacement
+steam               	Valve's digital software delivery system
 streamlink          	CLI program that launches streams from various streaming services in a custom video player (livestreamer fork)
 task                	A command-line todo list manager
-thefuck             	Magnificent app which corrects your previous console command
+time                	Utility for monitoring a program's use of system resources
 transmission-cli    	Fast, easy, and free BitTorrent client (CLI tools, daemon and web client)
 unace               	An extraction tool for the proprietary ace archive format
 unrar               	The RAR uncompression program
@@ -98,6 +101,7 @@ python-ueberzug     	ueberzug is an python script which aims to replace w3mimgdi
 pywal-git           	Generate and change color-schemes on the fly.
 ranger-git          	A simple, vim-like file manager.
 spaceship-prompt-git	A Zsh prompt for Astronauts
+steam-fonts         	Fonts to fix scrambled or missing text in steam menus
 sxhkd-git           	A simple X hotkey daemon
 tremc-git           	Curses interface for transmission - python3 fork of transmission-remote-cli
 unclutter-xfixes-git	unclutter-xfixes is a rewrite of unclutter using the x11-xfixes extension.
